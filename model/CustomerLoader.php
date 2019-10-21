@@ -40,7 +40,8 @@ class CustomerLoader
                 return new Customer($customerJson['id'], $customerJson['name'], $customerJson['group_id']);
                 //return een nieuwe  object Customer met wat we nodig hebben dus id,name,group_id
 
-
+                  // == mira si el valor es igual
+                 // === mira si el valor y el tipo son iguales
             }
         }
 

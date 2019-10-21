@@ -7,21 +7,60 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>view</title>
 </head>
+
 <body>
-<!--<h2> Your name is --><?php //echo $customer->getName() . "<br>" ;
-//     echo $customer->getId() . "<br> " ; echo $customer->getGroup();
-//    ?><!-- </h2>-->
-<!--<h2> Your name is : --><?php //echo $customer->getName()?><!--  </h2>-->
+
+<form method="post">
+    <select name="cust">
+        <?php foreach ($allCustomers AS $customerItem): ?>
+
+            <option value="<?php echo  'Name Customer : ' . $customerItem->getName() . "<br>" . 'Custumoer iD : ' . $customerItem->getId() . "<br>" . 'Group
+             Id : ' . $customerItem->getGroup() . "<br>"  ?>">
 
 
-<select>
-    <?php foreach($allCustomers AS $customerItem):?>
-        <option value="<?php echo $customerItem->getId()?>"><?php echo $customerItem->getName()?></option>
-    <?php endforeach; ?>
-</select>
 
-<h2> Your Id is : <?php echo $customer->getId()?> </h2>
-<h2>  Your group n° is : <?php echo $customer->getGroup()?>  </h2>
+
+
+<!--        <option value="--><?php //echo $customerItem->getId()?><!--" --><?php //if (isset($_POST["cust"]) && $_POST["cust"]== $customerItem->getId())
+//            echo "selected='selected'"?><!   --><?php //echo $customerItem->getName()?>
+
+            <?php echo $customerItem->getName() ?></option>
+
+        <?php endforeach; ?>
+    </select>
+
+
+    <br>
+
+    <select name="prod">
+        <?php foreach ($allProducts AS $productItem): ?>
+
+            <option value="<?php echo  'Name Product : ' . $productItem->getName() . "<br>" . 'Product iD : ' . $productItem->getId() . "<br>" . 'Product
+            Description : ' .$productItem->getDescription() . "<br>" . 'Price : ' .$productItem->getPrice() ?>">
+
+
+                <?php echo $productItem->getName() ?>
+
+
+
+            </option>
+        <?php endforeach; ?>
+    </select>
+
+
+    <input type="submit" name="submit" value="send">
+</form>
+<?php echo $_POST['cust']; ?>
+<?php echo $_POST['prod']  ?>
+
+
+<br><br>
+
+
+
+
+<?php var_dump($product); ?>
+
 
 </body>
 </html>
